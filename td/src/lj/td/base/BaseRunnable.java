@@ -11,6 +11,7 @@ public class BaseRunnable implements Runnable {
     public void run() {
         for (int i = 0; i < 10; i++) {
             System.out.println("worker #########" + i);
+            Thread.currentThread().getName();
             try {
                 Thread.sleep(600);
             } catch (InterruptedException e) {
@@ -22,7 +23,9 @@ public class BaseRunnable implements Runnable {
 
     public static void main(String[] args) {
         BaseRunnable baseRunnable = new BaseRunnable("-------->");
-        new Thread(baseRunnable).start();
+        new Thread(baseRunnable, "1111").start();
+        new Thread(baseRunnable, "2222").start();
+        new Thread(baseRunnable, "3333").start();
         normalPrint();
     }
 
