@@ -1,5 +1,7 @@
 package lj.td.proxy;
 
+import static java.lang.System.*;
+
 //1. 代理类可以完成一些真是类无法完成的事情
 //2. 真是类只用关注自身的业务，代理类来完成其它事情。
 public class ProxyDemo {
@@ -19,7 +21,7 @@ class JavaCompany implements RunCompany {
 
     @Override
     public void run() {
-        System.out.println("经营业务");
+        out.println("经营业务");
     }
 }
 
@@ -32,10 +34,10 @@ class ProxyCompany implements RunCompany {
 
     @Override
     public void run() {
-        System.out.println("-------------start------------");
-        System.out.println("工商注册。。。。。");
+        out.println("-------------start------------");
+        out.println("工商注册。。。。。");
         target.run();
-        System.out.println("报税+年审");
-        System.out.println("-------------end------------");
+        out.println("报税+年审");
+        out.println("-------------end------------");
     }
 }
