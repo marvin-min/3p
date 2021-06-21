@@ -5,6 +5,7 @@ package lj.td.proxy;
 public class ProxyDemo {
     public static void main(String[] args) {
         new ProxyCompany(new JavaCompany()).run();
+        new ProxyCompany(()-> System.out.println("........")).run();
     }
 }
 
@@ -31,8 +32,10 @@ class ProxyCompany implements RunCompany {
 
     @Override
     public void run() {
+        System.out.println("-------------start------------");
         System.out.println("工商注册。。。。。");
         target.run();
         System.out.println("报税+年审");
+        System.out.println("-------------end------------");
     }
 }
