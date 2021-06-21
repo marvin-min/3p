@@ -21,13 +21,19 @@ public class BaseCallable implements Callable<Boolean> {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         BaseCallable baseCallable = new BaseCallable();
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        ExecutorService executorService = Executors.newFixedThreadPool(6);
         Future<Boolean> f1 = executorService.submit(baseCallable);
         Future<Boolean> f2 = executorService.submit(baseCallable);
         Future<Boolean> f3 = executorService.submit(baseCallable);
+        Future<Boolean> f4 = executorService.submit(baseCallable);
+        Future<Boolean> f5 = executorService.submit(baseCallable);
+        Future<Boolean> f6 = executorService.submit(baseCallable);
         f1.get();
         f2.get();
         f3.get();
+        f4.get();
+        f5.get();
+        f6.get();
         executorService.shutdown();
     }
 }
