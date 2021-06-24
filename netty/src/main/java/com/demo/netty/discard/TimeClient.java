@@ -12,7 +12,10 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 public class TimeClient {
     public static void main(String[] args) throws InterruptedException {
         String host = args[0];
-        int port = Integer.parseInt(args[1].trim());
+        int port = 9999;
+        if(args.length> 1){
+            port = Integer.parseInt(args[1].trim());
+        }
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             Bootstrap bootstrap = new Bootstrap();
