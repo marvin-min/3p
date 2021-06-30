@@ -2,6 +2,7 @@ package lj.td.juc;
 
 import java.util.concurrent.CountDownLatch;
 
+//One or more countdownlatch Cooperation to finish a task
 public class Driver {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch startSignal = new CountDownLatch(1);
