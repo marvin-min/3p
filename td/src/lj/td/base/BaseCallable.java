@@ -6,7 +6,7 @@ public class BaseCallable implements Callable<Boolean> {
     private int ticketNums = 10;
 
     @Override
-    public Boolean call() throws Exception {
+    public synchronized Boolean call() throws Exception {
 
         while (ticketNums > 0) {
             try {
