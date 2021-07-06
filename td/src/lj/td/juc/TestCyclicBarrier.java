@@ -20,9 +20,9 @@ public class TestCyclicBarrier {
         System.out.println("----------------------------------------------------------------------");
         System.out.println("CyclicBarrier重用");
 
-        for(int i=0;i<N;i++) { //CyclicBarrier是可以重用
-            new Writer(cyclicBarrier).start();
-        }
+//        for(int i=0;i<N;i++) { //CyclicBarrier是可以重用
+//            new Writer(cyclicBarrier).start();
+//        }
     }
 }
 
