@@ -6,16 +6,23 @@ import java.lang.reflect.Constructor;
 public enum EnumSingleton {
     INSTANCE;
 
-    public EnumSingleton getInstance(){
+    public static EnumSingleton getInstance(){
         return INSTANCE;
+    }
+
+    public void say(){
+        System.out.println("...hl...");
     }
 }
 
 class Test {
     public static void main(String[] args) throws Exception {
-        Constructor<EnumSingleton> constructor = EnumSingleton.class.getDeclaredConstructor(String.class,int.class);
+        //failed to create instance by reflect
+     /*   Constructor<EnumSingleton> constructor = EnumSingleton.class.getDeclaredConstructor(String.class,int.class);
         constructor.setAccessible(true);
-        EnumSingleton lazy1 = constructor.newInstance();
+        EnumSingleton lazy1 = constructor.newInstance();*/
+        EnumSingleton demo = EnumSingleton.getInstance();
+        demo.say();
     }
 
 }
