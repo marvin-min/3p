@@ -24,7 +24,5 @@ public class CustomerThreadPool {
         } finally {
             executor.shutdown();
         }
-
-
     }
 }
