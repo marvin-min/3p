@@ -2,6 +2,7 @@ package jvm.hm;
 
 import java.io.IOException;
 import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +11,30 @@ import java.util.List;
 public class SoftReferenceTest {
     public static void main(String[] args) throws IOException {
 //        softReference();
-        strongerReference();
+//        strongerReference();
+        weakReference();
     }
 
 
+    //软引用。
     public static void softReference() throws IOException {
 
         List<SoftReference<byte[]>> bytes = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             SoftReference<byte[]> ref = new SoftReference<>(new byte[1024 * 1024 * 10]);
+            System.out.println(ref.get());
+            bytes.add(ref);
+            System.out.println(bytes.size());
+        }
+        System.in.read();
+    }
+
+    //软引用。
+    public static void weakReference() throws IOException {
+
+        List<WeakReference<byte[]>> bytes = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            WeakReference<byte[]> ref = new WeakReference<>(new byte[1024 * 1024 * 10]);
             bytes.add(ref);
             System.out.println(bytes.size());
         }
@@ -30,7 +46,7 @@ public class SoftReferenceTest {
          * 强引用 GC 失败
          */
         List<Byte[]> bytes = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             Byte[] b = new Byte[1024 * 1024 * 10];
             bytes.add(b);
         }
