@@ -5,6 +5,9 @@ import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 //-verbose:gc
 // -Xmx20m -verbose:gc  一直触发GC
@@ -51,6 +54,7 @@ public class SoftReferenceTest {
             bytes.add(b);
         }
         System.in.read();
+        Executors.newFixedThreadPool(1000);
     }
 
 }
