@@ -6,9 +6,9 @@ import java.lang.reflect.Constructor;
 public enum EnumSingleton {
     INSTANCE;
 
-    public static EnumSingleton getInstance(){
-        return INSTANCE;
-    }
+//    public static EnumSingleton getInstance(){
+//        return INSTANCE;
+//    }
 
     public void say(){
         System.out.println("...hl...");
@@ -21,7 +21,7 @@ class Test {
      /*   Constructor<EnumSingleton> constructor = EnumSingleton.class.getDeclaredConstructor(String.class,int.class);
         constructor.setAccessible(true);
         EnumSingleton lazy1 = constructor.newInstance();*/
-        EnumSingleton demo = EnumSingleton.getInstance();
+        EnumSingleton demo = EnumSingleton.INSTANCE;
         demo.say();
     }
 
