@@ -1,5 +1,7 @@
 package algorithm;
 
+import static algorithm.ArrayUtils.printArr;
+
 /*
     https://www.runoob.com/w3cnote/bubble-sort.html
     相邻两个比较
@@ -16,17 +18,10 @@ public class BubbleSort {
                     array[j+1] = array[j];
                     array[j] = temp;
                 }
+                printArr(array);
             }
-            printArr(array);
         }
 
+    }
 
-    }
-    static void printArr(int[] array){
-//        System.out.println("--------------------------------------------");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]+"\t");
-        }
-        System.out.println("");
-    }
 }
