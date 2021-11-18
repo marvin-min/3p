@@ -1,0 +1,9 @@
+spring:
+  banner:
+    location: classpath:banner.txt
+  web:
+    resources:
+      add-mappings: true
+      static-locations: [classpath:/hello]
+  mvc:
+    static-path-pattern: /res/**
