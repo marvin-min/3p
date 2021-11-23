@@ -9,4 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Pet {
     private String name;
+    private Integer age;
+
+    public Pet(String name){
+        this.name = name;
+    }
+
 }
